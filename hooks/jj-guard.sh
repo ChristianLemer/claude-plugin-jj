@@ -21,7 +21,7 @@ suggest_deny() {
     exit 1
 }
 
-input=$(</dev/stdin)
+input=$(cat)
 command=$(jq -r '.tool_input.command // empty' <<< "$input")
 
 # コマンドが空なら許可
